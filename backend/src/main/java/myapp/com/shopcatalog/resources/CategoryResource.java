@@ -1,6 +1,6 @@
-package myapp.com.shopcatalog.resourcess;
+package myapp.com.shopcatalog.resources;
 
-import myapp.com.shopcatalog.entities.Category;
+import myapp.com.shopcatalog.dto.CategoryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +18,8 @@ public class CategoryResource {
     private CategoryService service;
 
     @GetMapping
-    public ResponseEntity<List<Category>> findAll() {
-        List<Category> list = service.findAll();
+    public ResponseEntity<List<CategoryDTO>> findAll() {
+        List<CategoryDTO> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 
